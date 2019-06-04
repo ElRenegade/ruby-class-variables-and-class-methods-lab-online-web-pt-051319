@@ -1,0 +1,35 @@
+class Song
+  @@count = 0
+  @@genres = []
+  @@artists = []
+  attr_accessor :artist, :genre :name
+
+  def initialize(name, artist, genre)
+
+    @@genres << genre
+    @@artists << artist
+    @@count += 1
+  end
+
+  def self.genres
+    @@genres.uniq
+  end
+
+  def self.artist
+    @@artists.uniq
+  end
+
+  def slef.genre_count
+    total_genres={}
+    @@genres.inject{|k, v| v[k]+=1; v}
+  end
+
+  def self.artist_count
+    total_artists={}
+    @@artists.inject{|k, v| v[k]+=1; v}
+  end
+
+  def self.count
+    @@count
+  end
+end
