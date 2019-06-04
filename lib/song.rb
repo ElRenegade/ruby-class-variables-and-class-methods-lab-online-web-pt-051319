@@ -33,7 +33,12 @@ class Song
 
   def self.artist_count
     total_artists={}
-    @@artists.inject{|k, v| v[k]+=1; v}
+    @@artists.each{|a| if total_artists[a]
+      total_artists[a] += 1
+    else
+      total_artists[a] = 1
+    end}
+    total_artists
   end
 
   def self.count
