@@ -19,7 +19,7 @@ class Song
     @@artists.uniq
   end
 
-  def slef.genre_count
+  def self.genre_count
     total_genres={}
     @@genres.inject{|k, v| v[k]+=1; v}
   end
