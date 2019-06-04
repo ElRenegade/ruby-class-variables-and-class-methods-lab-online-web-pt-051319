@@ -20,7 +20,7 @@ class Song
   end
 
   def self.genre_count
-    @@genres.inject(total_genres.new(0)){|k, v| v[k]+=1; v}
+    @@genres.inject(total_genres.new(0)){|k, v| k[v]+=1; k}
   end
 
   def self.artist_count
