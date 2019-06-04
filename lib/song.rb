@@ -22,7 +22,13 @@ class Song
   end
 
   def self.genre_count
-    @@genres.inject(total_genres.new(0)){|k, v| k[v]+=1; k}
+    genre_count = {}
+    @@genres.each{|g| if genre_count[g]
+      genre_count[g] += 1
+    else
+      genre_count[g] = 1
+    end}
+    genre_count
   end
 
   def self.artist_count
